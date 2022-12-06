@@ -1,0 +1,52 @@
+
+$cor_y: #3d7258;
+
+.produto-card-img{
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    align-self: center;
+    border-radius: 5px;
+    -webkit-box-shadow: 3px 3px 3px 0px #000000; 
+    box-shadow: 3px 3px 3px 0px #000000;
+    margin-bottom: 20px;
+    aspect-ratio:1;
+}
+
+mat-card-content{
+    height: 100%;
+}
+
+.nome-produto{
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.artista-produto{
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.preco-produto{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+::ng-deep .produto-tile .mat-chip{
+    background-color: $cor_y !important;
+    color: white !important;
+}
+
+::ng-deep .mat-standard-chip:focus::after {
+    opacity: 0 !important;
+}
+
+::ng-deep .produto-tile .mat-chip-list-wrapper {
+    flex-wrap: unset !important;
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+

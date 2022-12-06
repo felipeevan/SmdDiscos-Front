@@ -1,0 +1,137 @@
+<app-layout-default>
+    <div class="d-flex flex-row row-home">
+        <div class="flex-fill" style="width: 100%;">
+            <div class="row g-3">
+                <div class="col-md-4 col-sm-12">
+                    <mat-card>
+                        <div class="grid-chart">
+                            <ngx-charts-pie-chart
+                            [results]="produtosForaDeEstoque"
+                            [gradient]="false"
+                            [legend]="true"
+                            legendTitle=""
+                            [legendPosition]="legendPosition"
+                            [labels]="false"
+                            [doughnut]="false"
+                            >
+                            </ngx-charts-pie-chart>
+                        </div>
+                    </mat-card>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <mat-card>
+                        <div class="grid-chart">
+                            <ngx-charts-pie-chart
+                            [results]="discosPorVenda"
+                            [gradient]="false"
+                            [legend]="true"
+                            legendTitle=""
+                            [legendPosition]="legendPosition"
+                            [labels]="false"
+                            [doughnut]="false"
+                            >
+                            </ngx-charts-pie-chart>
+                        </div>
+                    </mat-card>
+                </div>
+                <div class="col-md-4 col-12">
+                    <mat-card>
+                        <div class="grid-chart">
+                            <ngx-charts-pie-chart
+                            [results]="discosPorVenda"
+                            [gradient]="false"
+                            [legend]="true"
+                            legendTitle=""
+                            [legendPosition]="legendPosition"
+                            [labels]="false"
+                            [doughnut]="false"
+                            >
+                            </ngx-charts-pie-chart>
+                        </div>
+                    </mat-card>
+                </div>
+
+                <div class="col-12">
+                    <mat-card>
+                        <mat-card-title class="d-flex justify-content-between align-items-center">
+                            Categorias
+                            <button mat-raised-button color="primary" (click)="addCategoriaModal()">
+                                Adicionar Item
+                            </button>
+                        </mat-card-title>
+                          
+                        <table mat-table [dataSource]="categorias">
+                            <ng-container *ngFor="let column of columnsCategorias" [matColumnDef]="column.name">
+                                <th mat-header-cell *matHeaderCellDef>
+                                    {{column.title}}
+                                </th>
+                                <td mat-cell *matCellDef="let row">
+                                    {{row[column.name]}}
+                                </td>
+                            </ng-container >
+
+                            <ng-container matColumnDef="star">
+                                <th mat-header-cell *matHeaderCellDef>Ações</th>
+                                <td mat-cell *matCellDef="let element">
+                                    <button mat-icon-button (click)="editCategoriaModal(element)">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                    <button mat-icon-button (click)="excluirCategoria(element.id)">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumnsCategorias"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumnsCategorias;"></tr>
+                        </table>
+                    </mat-card>
+                </div>
+
+                <div class="col-12 mb-3">
+                    <mat-card>
+                        <mat-card-title class="d-flex justify-content-between align-items-center">
+                            Produtos
+                            <button mat-raised-button color="primary" (click)="addModal()">
+                                Adicionar Item
+                            </button>
+                        </mat-card-title>
+                          
+                        <table mat-table [dataSource]="discos">
+                            <ng-container matColumnDef="foto">
+                                <th mat-header-cell *matHeaderCellDef>Foto</th>
+                                <td mat-cell *matCellDef="let element">
+                                    <img src="{{element.foto??element.foto!=''?element.foto:'assets/noimage.jpg'}}" width="30" height="auto">
+                                </td>
+                            </ng-container>
+
+                            <ng-container *ngFor="let column of columns" [matColumnDef]="column.name">
+                                <th mat-header-cell *matHeaderCellDef>
+                                    {{column.title}}
+                                </th>
+                                <td mat-cell *matCellDef="let row">
+                                    {{row[column.name]}}
+                                </td>
+                            </ng-container >
+
+                            <ng-container matColumnDef="star">
+                                <th mat-header-cell *matHeaderCellDef>Ações</th>
+                                <td mat-cell *matCellDef="let element">
+                                    <button mat-icon-button (click)="editModal(element)">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                    <button mat-icon-button (click)="excluir(element.id)">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-layout-default>

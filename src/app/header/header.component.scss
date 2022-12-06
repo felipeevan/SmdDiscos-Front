@@ -1,0 +1,30 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+$cor_x: #231f20;
+$cor_y: #3d7258;
+$cor_z: #e7d99a;
+$cor_w: #dc696c;
+$cor_t: #3d5ba3;
+
+
+.mat-toolbar{
+  background: $cor_z;
+  color: $cor_x;
+}
+
+
+#search-icon{
+  background-color: $cor_t !important;
+  color: white;
+  border: 0px !important;
+}
+
+#search-input{
+  border: 0px !important;
+}
+
+#search-input:focus{
+  box-shadow: inherit !important;
+}

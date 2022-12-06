@@ -1,0 +1,37 @@
+<div class="cart-tile-comp">
+    <div class="cart-tile d-flex flex-row">
+        <div class="cart-tile-img">
+            <img src="{{data?.foto??data.foto!=''?data.foto:'assets/noimage.jpg'}}">
+        </div>
+        <div class="flex-grow-1 d-flex flex-column justify-content-between">
+            <div class="titulo">
+                <b>{{data.quantidade_carrinho}}x</b> {{data.nome}}
+            </div>
+            <div style="text-align: end;">
+                <span style="font-size: 12px;">
+                    Preço unitário - {{data.preco | currency:'BRL'}}
+                </span>
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    <div class="button-quanti">
+                        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+                        (click)="remove()">
+                            <mat-icon *ngIf="data.quantidade_carrinho!=1">remove</mat-icon>
+                            <mat-icon *ngIf="data.quantidade_carrinho==1">delete</mat-icon>
+                        </button>
+                        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+                        (click)="add()">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+        
+                    <div>
+                        <span style="font-size: 18px;">
+                            {{data.precototal | currency:'BRL'}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

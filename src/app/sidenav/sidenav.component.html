@@ -1,0 +1,11 @@
+<mat-drawer-container class="example-container" [hasBackdrop]="false">
+    <mat-drawer #drawer mode="over" position="end">
+        <app-sidenav-drawer></app-sidenav-drawer>
+    </mat-drawer>
+    <mat-drawer #menu mode="side" position="start" id="menu-side">
+        <app-menu-drawer></app-menu-drawer>
+    </mat-drawer>
+    <mat-drawer-content>
+        <ng-content></ng-content>
+    </mat-drawer-content>
+</mat-drawer-container>

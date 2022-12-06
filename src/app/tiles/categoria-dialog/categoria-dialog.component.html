@@ -1,0 +1,21 @@
+<div class="d-flex flex-column">
+    <span style="font-size: 20px;
+    line-height: 20px;">{{title}}</span>
+    <form class="mt-3" [formGroup]="categoriaForm" #formCategoria="ngForm" (ngSubmit)="salvar()">
+        <div class="col">
+            <div class="row g-0">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="nome" name="nome" required >
+                    <mat-icon matSuffix>category</mat-icon>
+                    <mat-error>Preencha o campo</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="d-flex justify-content-end">
+                    <button mat-flat-button color="secondary" type="button"
+                    class="me-1" (click)="this.dialogRef.close()">Cancelar</button>
+                    <button mat-flat-button color="primary" class="botao_amarelo" type="submit">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>

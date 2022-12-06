@@ -1,0 +1,64 @@
+<mat-toolbar class="mat-elevation-z">
+    <button *ngIf="!isAdmin" 
+     mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="toggleMenuSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span style="font-size: 20px;
+    line-height: 20px;cursor: pointer;" (click)="navigateTo('')">SMDiscos</span>
+    <span class="example-spacer ms-3 me-3" >
+      <div class="input-group" *ngIf="!isAdmin">
+        <span class="input-group-text" id="search-icon">
+          <mat-icon>search</mat-icon>
+        </span>
+        <input type="text" class="form-control" [(ngModel)]="search" id="search-input"
+        placeholder="Digite sua pesquisa aqui"
+        (keyup.enter)="searchByKey()">
+      </div>
+    </span>
+    <button mat-icon-button class="example-icon" 
+     [matMenuTriggerFor]="menu" aria-label="Example icon-button with share icon">
+      <mat-icon>person</mat-icon>
+    </button>
+    <button *ngIf="!isAdmin" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="toggleRightSidenav()">
+        <mat-icon *ngIf="!quantidadeCarrinho">shopping_cart</mat-icon>
+        <mat-icon *ngIf="quantidadeCarrinho" [matBadge]="quantidadeCarrinho">shopping_cart</mat-icon>
+    </button>
+    
+    
+    <mat-menu #menu="matMenu">
+      <span *ngIf="logado && !isAdmin">
+        <button mat-menu-item (click)="navigateTo('config')">
+          <mat-icon>assignment_ind</mat-icon>
+          <span>Sua conta</span>
+        </button>
+        <button mat-menu-item (click)="navigateTo('pedidos')">
+          <mat-icon>list</mat-icon>
+          <span>Pedidos</span>
+        </button>
+        <button mat-menu-item (click)="deslogar()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Sair</span>
+        </button>
+      </span>  
+      <span *ngIf="logado && isAdmin">
+        <button mat-menu-item (click)="navigateTo('dashboard')">
+          <mat-icon>dashboard</mat-icon>
+          <span>Dashboard</span>
+        </button>
+        <button mat-menu-item (click)="navigateTo('pedidosAdmin')">
+          <mat-icon>list</mat-icon>
+          <span>Pedidos</span>
+        </button>
+        <button mat-menu-item (click)="deslogar()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Sair</span>
+        </button>
+      </span>  
+      <span *ngIf="!logado">
+        <button mat-menu-item (click)="navigateTo('auth')">
+          <mat-icon>assignment_ind</mat-icon>
+          <span>Entrar/Registrar</span>
+        </button>
+      </span>    
+    </mat-menu>
+</mat-toolbar>

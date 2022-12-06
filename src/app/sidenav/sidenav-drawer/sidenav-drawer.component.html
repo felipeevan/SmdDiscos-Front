@@ -1,0 +1,9 @@
+<div class="d-flex flex-column cart-div" style="height: 100%;">
+    <div id="carrinho" class="flex-grow-1" style="overflow: auto;">
+        <app-cart-tile *ngFor="let item of cart_items"
+        [data]="item"></app-cart-tile>
+    </div>
+    <div id="to_cart">
+        <button *ngIf="user" mat-raised-button color="accent" (click)="irAoPagamento()">Ir para o pagamento</button>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<div class="d-flex flex-column justify-content-center align-items-center background-login" style="height: 100%;">
+    <mat-card>
+        <div class="logo">
+            SMDiscos
+        </div>
+        <mat-tab-group mat-align-tabs="center" (selectedTabChange)="resetForm();">
+            <mat-tab label="Login">
+                <form class="mt-3 mb-3" [formGroup]="loginForm" #loginNgForm="ngForm" (ngSubmit)="logar()">
+                    <div class="col">
+                        <div class="row g-0">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Login</mat-label>
+                                <input matInput formControlName="login" name="login" required >
+                                <mat-icon matSuffix>assignment_ind</mat-icon>
+                                <mat-error>Preencha o campo, mínimo 8 caracteres e sem espaço</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="row g-0">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Senha</mat-label>
+                                <input matInput type="password"
+                                formControlName="senha" name="senha" required minlength="8">
+                                <mat-icon matSuffix>vpn_key</mat-icon>
+                                <mat-error>Preencha o campo, mínimo 8 caracteres</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="row g-0 align">
+                            <button mat-flat-button color="primary" class="botao_amarelo" type="submit">Logar</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="Registro">
+                <form class="mt-3 mb-3" [formGroup]="registroForm" #registroNgForm="ngForm"  (ngSubmit)="registrar()">
+                    <div class="col">
+                        <div class="row g-0">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Nome</mat-label>
+                                <input matInput formControlName="nome" name="login" required>
+                                <mat-icon matSuffix>person</mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="row g-0">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="email" name="login" required>
+                                <mat-icon matSuffix>email</mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="row g-0">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Login</mat-label>
+                                <input matInput formControlName="login" name="login" required>
+                                <mat-icon matSuffix>assignment_ind</mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="row g-0">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Senha</mat-label>
+                                <input matInput type="password"
+                                formControlName="senha" name="login" required>
+                                <mat-icon matSuffix>vpn_key</mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="row g-0">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Confirmar Senha</mat-label>
+                                <input matInput type="password"
+                                formControlName="csenha" name="login" required 
+                                [errorStateMatcher]="matcher">
+                                <mat-icon matSuffix>vpn_key</mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="row g-0 align">
+                            <button mat-flat-button color="primary" class="botao_amarelo">Registrar</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-tab>
+          </mat-tab-group>
+    </mat-card>
+</div>

@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+button:focus {
+    outline: 0px;
+}
+
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+
+   .mat-form-field-outline-gap{
+    border-width: 1px !important;
+  }
+
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start, .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end, .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap{
+    border-width: 1px !important;
+  }
+
+
+  .mat-snack-bar-container{
+    background: #ffffff;
+    color: #231f20
+  }
+
+  .mat-simple-snackbar-action{
+    color: #3d5ba3
+  }
+
+  .cart-div{
+    background-color: #eeeeee;
+  }

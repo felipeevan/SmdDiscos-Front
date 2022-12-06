@@ -1,0 +1,29 @@
+.row-home{
+    margin: 0px;
+    height: 100%; width: 100%;
+}
+
+.grid-chart{
+    display: grid;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-column-star, .mat-header-star {
+    flex: none;
+    width: 20px;
+    white-space: nowrap;
+}
+
+.mat-column-foto, .mat-header-foto {
+    flex: none;
+    width: 80px;
+    white-space: nowrap;
+}
+
+.button-container{
+    padding-bottom: 8px;
+    text-align: end;
+}

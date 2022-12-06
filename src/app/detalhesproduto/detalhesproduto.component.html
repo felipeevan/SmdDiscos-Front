@@ -1,0 +1,59 @@
+<app-layout-default>
+    <div class="container">
+        <div class="d-flex row g-3">
+            <div class="col-md-8">
+                <img class="rounded img-fluid"
+                style="width: 100%;" src="{{produto?.foto??produto.foto!=''?produto.foto:'assets/noimage.jpg'}}">
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                      <h2>{{produto.nome}} - {{produto.autor}}</h2>
+                      <h6 class="lead">00000000{{produto.id}}</h6>
+                      <mat-divider></mat-divider>
+                      <h5 class="card-title">Formato: CD de áudio</h5>
+                      <mat-icon class="ambar-icon">grade grade grade grade grade</mat-icon>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <p class="d-inline">R$</p>
+                            <strong><h1 class="d-inline display-3">{{produto.preco}}</h1></strong>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <span class="badge bg-primary">À vista</span>
+                            </div>
+                        </div><br>
+                        <br />
+                        <mat-divider></mat-divider>
+                        <div class="row">
+                            <h2>Descrição do produto:</h2>
+                            <p>{{produto.descricao}}</p>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="row">
+                            <div>
+                                <div class="badge bg-success" style="margin: 5px;" *ngFor="let cat of produto.categorias"
+                                >{{cat.descricao}}</div>
+                            </div>
+                        </div><br>
+                        <div class="input-group mb-2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1"
+                            (click)="removeQuantidade()">-</button>
+                            <input type="number" class="form-control quantidadeinput" [(ngModel)]="quantidade"
+                            placeholder="Quantidade" aria-label="Example text with button addon"
+                            aria-describedby="button-addon1">
+                            <button class="btn btn-outline-secondary" 
+                            (click)="addQuantidade()" type="button" id="button-addon2">+</button>
+                        </div>                        
+                        <div class="row justify-content-around">
+                            <!-- <button class="d-inline btn btn-primary" type="button">Comprar</button> -->
+                            <button class="d-inline btn corz" type="button"
+                            (click)="addItemToCart()">Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-layout-default>

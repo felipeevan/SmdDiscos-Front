@@ -1,0 +1,27 @@
+.cart-div{
+    padding: 8px;
+}
+
+::ng-deep .mat-list-base{
+    padding: 0px !important;
+}
+
+::ng-deep .list-categorias .mat-list-item-content{
+    padding: 0px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+
+
+::ng-deep .mat-list .mat-list-item .mat-line{
+    word-wrap: break-word;
+    white-space: pre-wrap; 
+    
+}
+

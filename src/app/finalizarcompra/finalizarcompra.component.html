@@ -1,0 +1,59 @@
+<app-layout-default>
+    <div class="d-flex flex-row row-home">
+        <div class="flex-fill">
+            <div class="row g-3">
+                <form>
+                    <mat-card class="mat-elevation-z4">
+                        <h1>Items no carrinho</h1>
+                        <div class="flex-grow-1" style="overflow: auto;">
+                            <div *ngFor="let item of cart_items" class="compra-tile-comp">
+                                <app-compra-tile 
+                                [data]="item"></app-compra-tile>
+                            </div>
+                        </div>
+                    </mat-card>
+                </form>
+                <form>
+                    <mat-card class="mat-elevation-z4">
+                        <div class="flex-grow-1" style="overflow: auto;">
+                            <h1>
+                                Resumo do pedido
+                            </h1>
+                            <h3>
+                                Tipo de Pagamento
+                            </h3>
+                            <div>
+                                <mat-button-toggle-group name="formaPagamento" aria-label="Font Style" [(ngModel)]="formaPagamento">
+                                    <mat-button-toggle value="0">Dinheiro</mat-button-toggle>
+                                    <mat-button-toggle value="1">Débito</mat-button-toggle>
+                                    <mat-button-toggle value="2">Crédito</mat-button-toggle>
+                                  </mat-button-toggle-group>
+                            </div>
+                            <br>
+                            <h3>
+                                Tipo de Entrega
+                            </h3>
+                            <div>
+                                <mat-button-toggle-group name="formaEntrega" aria-label="Font Style" [(ngModel)]="formaEntrega">
+                                    <mat-button-toggle value="0">Retirada</mat-button-toggle>
+                                    <mat-button-toggle value="1">Entrega domiciliar</mat-button-toggle>
+                                  </mat-button-toggle-group>
+                            </div>
+                            <br>
+                            <div style="display: flex;align-items: flex-end;
+                            justify-content: space-between;">
+                                <div>
+                                    <h2 style="margin-bottom: 0px">Total do pedido: <b>{{precoTotalProdutos | currency:'BRL'}}</b></h2>
+                                </div>
+                                <div>
+                                    <button mat-flat-button color="primary" type="button" *ngIf="naoPodePedir()" (click)="concluirCompra()"
+                                    class="me-1" style="font-size:18px; padding: 10px 20px; margin-top: 10px;">Concluir Compra</button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card>
+                </form>
+            </div>
+        </div>
+    </div>
+</app-layout-default>

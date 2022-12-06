@@ -1,0 +1,10 @@
+<div class="d-flex flex-column cart-div" style="height: 100%;">
+    <div id="carrinho" class="flex-grow-1" style="overflow: auto;">
+        <h1>Categorias</h1>
+        <mat-list role="list" class="list-categorias">
+            <mat-list-item matRipple (click)="goToCategoria(categoria)"
+            role="listitem" *ngFor="let categoria of categorias">
+            {{categoria.descricao}}</mat-list-item>
+          </mat-list>
+    </div>
+</div>

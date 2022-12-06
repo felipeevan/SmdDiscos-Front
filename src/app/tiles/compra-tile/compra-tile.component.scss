@@ -1,0 +1,56 @@
+.cart-tile-c{
+    background-color: white;
+    padding: 5px;
+    padding-left: 0px;
+}
+
+.cart-tile-img{
+    height: auto;
+    aspect-ratio: 1 / 1;
+    max-height: 100px;
+    margin-right: 5px;
+    img{
+        border-radius: 10px;
+        height: 100%;
+        width: -webkit-fill-available;
+        object-fit: cover;
+    }
+}
+
+.button-quanti{
+    button{
+        width: inherit;
+        height: inherit;
+        line-height: inherit;
+    }
+}
+
+.button-quanti button:first-of-type{
+    margin-right: 5px;
+}
+
+
+
+
+.titulo{
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+   font-size: 18px;
+   font-weight: 500;
+}
+
+.autor{
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1; /* number of lines to show */
+           line-clamp: 1; 
+   -webkit-box-orient: vertical;
+   font-size: 14px;
+   font-weight: 400;
+
+}

@@ -1,0 +1,58 @@
+$cor_x: #231f20;
+$cor_y: #3d7258;
+$cor_z: #e7d99a;
+$cor_w: #dc696c;
+$cor_t: #3d5ba3;
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 20px;
+}
+
+.background-login{
+    position: relative;
+    overflow: hidden;
+}
+.background-login::before{
+    content: "";
+    height: 100%; 
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    background-size: cover;
+    filter: grayscale(100%) blur(10px);
+    transform: scale(1.05);
+}
+// colors
+
+
+::ng-deep .botao_amarelo{
+  background-color: $cor_t !important;
+  color: black !important;
+}
+
+.row-home{
+    margin: 0px;
+    height: 100%; width: 100%;
+}
+
+mat-card{
+    width: 100% !important;
+}
+
+::ng-deep .mat-form-field{
+    width: 100% !important;
+}
+
+::ng-deep .botao_amarelo{
+    background-color: #fff617 !important;
+    color: black !important;
+}
+
+::ng-deep .botao_amarelo.mat-button-disabled{
+    opacity: 0.7;
+}

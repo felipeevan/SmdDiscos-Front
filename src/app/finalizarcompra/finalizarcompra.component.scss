@@ -1,0 +1,29 @@
+$cor_x: #231f20;
+$cor_y: #3d7258;
+$cor_z: #e7d99a;
+$cor_w: #dc696c;
+$cor_t: #3d5ba3;
+
+.row-home{
+    margin: 0px;
+    height: 100%; width: 100%;
+}
+
+mat-card{
+    width: 100% !important;
+}
+
+.compra-tile-comp{
+    border-bottom-style: dashed;
+    border-bottom-color: #cccccc;
+    border-bottom-width: 2px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.compra-tile-comp:last-child{
+    border-bottom-style: none;
+    border-bottom-width: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
